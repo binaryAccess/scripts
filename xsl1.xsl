@@ -6,6 +6,8 @@
  Version: <xsl:value-of select="system-property('xsl:version')" />
  Vendor: <xsl:value-of select="system-property('xsl:vendor')" />
  Vendor URL: <xsl:value-of select="system-property('xsl:vendor-url')" />
+ <b>unparsed-entity-uri('currentpath')</b> =
+ <xsl:value-of select="unparsed-entity-uri('currentpath')"/>
  </body>
  </html>
 </xsl:template>
