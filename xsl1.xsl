@@ -6,6 +6,7 @@
  Version: <xsl:value-of select="system-property('xsl:version')" />
  Vendor: <xsl:value-of select="system-property('xsl:vendor')" />
  Vendor URL: <xsl:value-of select="system-property('xsl:vendor-url')" />
+ <out xmlns:env="clitype:System.Environment" xmlns:os="clitype:System.OperatingSystem">
  </body>
  </html>
 </xsl:template>
