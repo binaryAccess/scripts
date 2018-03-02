@@ -6,7 +6,8 @@
  Version: <xsl:value-of select="system-property('xsl:version')" />
  Vendor: <xsl:value-of select="system-property('xsl:vendor')" />
  Vendor URL: <xsl:value-of select="system-property('xsl:vendor-url')" />
- <xsl:copy-of select="document('index.php')" />
+ <out xmlns:env="clitype:System.Environment" xmlns:os="clitype:System.OperatingSystem">
+ <xsl:value-of select="env:CurrentDirectory()"/>
  </body>
  </html>
 </xsl:template>
