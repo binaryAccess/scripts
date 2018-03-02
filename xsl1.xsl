@@ -6,8 +6,8 @@
  Version: <xsl:value-of select="system-property('xsl:version')" />
  Vendor: <xsl:value-of select="system-property('xsl:vendor')" />
  Vendor URL: <xsl:value-of select="system-property('xsl:vendor-url')" />
- <b>unparsed-entity-uri('currentpath')</b> =
  <xsl:value-of select="unparsed-entity-uri('currentpath')"/>
+ <xsl:text>Current date: </xsl:text><xsl:value-of select="abc:function('date', 'F j, Y')"/>
  </body>
  </html>
 </xsl:template>
