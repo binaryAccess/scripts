@@ -1,0 +1,3 @@
+-- WMI --
+wmic /node:192.168.56.101 /user:administrator /password:Admin001 "process call create cmd.exe /c ipconfig > \\SERVER\share\output.txt”
+
