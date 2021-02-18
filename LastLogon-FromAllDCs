@@ -1,0 +1,39 @@
+Import-Module ActiveDirectory
+
+function Get-ADUsersLastLogon()
+{
+  $dcs = Get-ADDomainController -Filter {Name -like "*"}
+  $users = @("spa", “csc”)
+  $time = 0
+  $exportFilePath = "c:\users\adminslpv\lastLogon.csv"
+  $columns = "name,username,datetime"
+
+  Out-File -filepath $exportFilePath -force -InputObject $columns
+
+  foreach($user in $users)
+  {
+   # $user = Get-ADUser $user
+    Write-Host $user
+    foreach($dc in $dcs)
+    { 
+      $hostname = $dc.HostName
+      #Write-Host $hostname
+      $currentUser = Get-ADUser $user -Properties LastLogonTimestamp -Server $hostname # | Get-ADObject -Server $hostname -Properties LastLogon
+       # Write-Host $currentUser.LastLogonDate
+      if($currentUser.LastLogonTimestamp -gt $time) 
+      {
+        $time = $currentUser.LastLogonTimestamp
+      }
+    }
+
+    $dt = [DateTime]::FromFileTime($time)
+    $row = $currentUser.Name+","+$currentUser.SamAccountName+","+$dt
+
+    #Write-Host $row
+    Out-File -filepath $exportFilePath -append -noclobber -InputObject $row
+   
+    $time = 0
+  }
+}
+
+Get-ADUsersLastLogon 
